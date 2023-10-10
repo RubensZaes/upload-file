@@ -23,6 +23,7 @@ public class UploadController {
     }
     @PostMapping("/upload")
     public ModelAndView uploadFile(MultipartFile multipartFile) {
+        System.out.println(multipartFile);
         try {
             Files.createDirectories(pathRaiz);
             Files.copy(multipartFile.getInputStream(), pathRaiz.resolve(multipartFile.getOriginalFilename()));
